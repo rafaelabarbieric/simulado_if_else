@@ -21,11 +21,11 @@
     const preco = ((unidadeMamao * 5) + (kgMelancia * 3) + (unidadeAbacate * 4) + (kgCebola * 1.1));
     if (dinheiro > preco){
         const sobra = (dinheiro - preco);
-        alert(`Seu dinheiro é suficiente para pagar e sobra R$ ${sobra.toFixed(2).replace(".",",")}.`);
+        alert(`Seu dinheiro é suficiente para pagar, valor da compra ${preco.toFixed(2).replace(".",",")} e sobra R$ ${sobra.toFixed(2).replace(".",",")}.`);
     }
     else{
         const falta = (preco - dinheiro);
-        alert(`Seu dinheiro não foi o sufiente para pagar e faltou R$ ${falta.toFixed(2).replace(".",",")}.`);
+        alert(`Seu dinheiro não foi o sufiente para pagar, valor da compra ${preco.toFixed(2).replace(".",",")} e faltou R$ ${falta.toFixed(2).replace(".",",")}.`);
     }
 
 
