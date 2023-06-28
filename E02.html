@@ -10,8 +10,23 @@
 
     //ENTRADA
 
+    const kgMelancia = Number(prompt(`Informe o preço do Kg da melancia:`).trim().replace(",","."));
+    const unidadeMamao = Number(prompt(`Informe o preço da unidade do mamão:`).trim().replace(",","."));
+    const unidadeAbacate = Number(prompt(`Informe o preço da unidade de abacate:`).trim().replace(",","."));
+    const kgCebola = Number(prompt(`Informe o preço do kg da cebola:`).trim().replace(",","."));
+    const dinheiro = Number(prompt(`Informe o valor em dinheiro que você tem para realizar a compra:`).trim().replace(",","."));
 
     //PROCESSAMENTO
+
+    const preco = ((unidadeMamao * 5) + (kgMelancia * 3) + (unidadeAbacate * 4) + (kgCebola * 1.1));
+    if (dinheiro > preco){
+        const sobra = (dinheiro - preco);
+        alert(`Seu dinheiro é suficiente para pagar e sobra R$ ${sobra.toFixed(2).replace(".",",")}.`);
+    }
+    else{
+        const falta = (preco - dinheiro);
+        alert(`Seu dinheiro não foi o sufiente para pagar e faltou R$ ${falta.toFixed(2).replace(".",",")}.`);
+    }
 
 
     //SAÍDA
