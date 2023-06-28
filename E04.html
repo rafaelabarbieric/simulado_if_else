@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //PROBLEMA: Vínculo empregatício
     //Peça para o usuário informar qual a sua remuneração mensal (salário). Peça também para o usuário informar qual cargo que ocupa e quantas horas trabalha por dia. Considere 20 dias de trabalho no mês.
@@ -8,9 +9,37 @@
 
     //ENTRADA
 
+    const salario = Number(prompt(`Informe o seu salário:`).trim().replace(",","."));
+    const cargo = prompt(`Informe se você é Estagiário ou Progamador:`).trim().toLowerCase();
+    const horas = Number(prompt(`Informe quantas horas trabalha por dia:`).trim().replace(",","."));
 
     //PROCESSAMENTO
 
+    if(cargo === 'estagiário'){
+        if (horas <= 6){
+            const recebeHora = ((salario / 20) / horas);
+            alert(`Você recebe por hora R$ ${recebeHora.toFixed(2).replace(".",",")}.`);
+        }
+        else{
+            const contratado = ((salario * 0,5) + salario);
+            const valorHora = (contratado / 20) / horas;
+            alert(`Precisa ser contratado e receberá R$ ${valorHora.toFixed(2).replace(".",",")} por hora.`);
+        }
+    }
+    else if (cargo === 'progamador'){
+        if (horas <= 8){
+            const recebeHora2 = (salario / 20) / horas;
+            alert(`Você recebe por hora R$ ${recebeHora2.toFixed(2).replace(".",",")}.`);
+        }
+        else{
+            const aumento = (salario * 0.3) + salario;
+            const valorHora2 = (aumento / 20) / horas;
+            alert(`Após a remuneração você receberá R$ ${valorHora2.toFixed(2).replace(".",",")} por hora.`);
+        }
+    }
+    else{
+        alert(`Valor Inválido!`);
+    }
 
     //SAÍDA
 
