@@ -19,7 +19,7 @@
     //PROCESSAMENTO
 
     const preco = ((unidadeMamao * 5) + (kgMelancia * 3) + (unidadeAbacate * 4) + (kgCebola * 1.1));
-    if (dinheiro > preco){
+    if (dinheiro >= preco){
         const sobra = (dinheiro - preco);
         alert(`Seu dinheiro é suficiente para pagar, valor da compra ${preco.toFixed(2).replace(".",",")} e sobra R$ ${sobra.toFixed(2).replace(".",",")}.`);
     }
