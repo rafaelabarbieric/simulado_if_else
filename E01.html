@@ -7,9 +7,18 @@
 
     //ENTRADA
 
+    const notaTutor = Number(prompt(`Informe a sua nota do terceiro trimestre:`).trim().replace(",","."));
+    const notaAjudado = Number(prompt(`Informe a nota do aluno que você ajudou:`).trim().replace(",","."));
 
     //PROCESSAMENTO
 
+    if (notaAjudado > notaTutor){
+        alert(`CRIA MAIOR QUE O CRIADOR, ${notaAjudado.toFixed(2).replace(".",",")}.`);
+    }
+    else{
+        const adicional = (notaAjudado * 0.10) + notaTutor;
+        alert(`CONTINUE ENSINANDO! ${adicional.toFixed(2).replace(".",",")}.`);
+    }
 
     //SAÍDA
 
