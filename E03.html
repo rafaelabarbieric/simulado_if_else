@@ -8,8 +8,34 @@
 
     //ENTRADA
 
+    const estado = prompt(`Informe qual estado você deseja viajar, Rio Grande do Sul-RS ou Minas Gerais-MG:`).trim().toLowerCase();
+    const dias = Number(prompt(`Informe quantos dias pretende ficar lá`).trim().replace(",","."));
+    const dinheiro = Number(prompt(`Informe quanto de dinheiro possui para gastar na viagem:`).trim().replace(",","."));
 
     //PROCESSAMENTO
+
+    if(estado === 'rs' || estado === 'rio grande do sul'){
+        const precoViagem = (dias * 180);
+        if (dinheiro > precoViagem){
+            const sobra = dinheiro - precoViagem;
+            alert(`Boa viagem, você pode ficar ${dias} dias e preço da sua viagem será R$ ${precoViagem.toFixed(2).replace(".",",")}.`)
+        }
+        else{
+            const falta = precoViagem - dinheiro;
+            alert(`Sem Férias, falta R$ ${falta.toFixed(2).replace(".",",")} para realizar sua viagem.`);
+        }
+    }
+    else{
+        const precoViagem2 = (dias * 210);
+        if (dinheiro > precoViagem2){
+            const sobra2 = dinheiro - precoViagem2;
+            alert(`Boa viagem, você pode ficar R$ ${dias} e preço da sua viagem será R$ ${precoViagem2.toFixed(2).replace(".",",")}.`);
+        }
+        else{
+            const falta2 = precoViagem2 - dinheiro;
+            alert(`Sem Férias, falta R$ ${falta2.toFixed(2).replace(".",",")} para realizar sua viagem.`);
+        }
+    }
 
 
     //SAÍDA
