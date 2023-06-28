@@ -25,16 +25,19 @@
             alert(`Sem Férias, falta R$ ${falta.toFixed(2).replace(".",",")} para realizar sua viagem.`);
         }
     }
-    else{
+    else if (estado === 'mg' || estado === 'minas gerais'){
         const precoViagem2 = (dias * 210);
         if (dinheiro > precoViagem2){
             const sobra2 = dinheiro - precoViagem2;
-            alert(`Boa viagem, você pode ficar R$ ${dias} e preço da sua viagem será R$ ${precoViagem2.toFixed(2).replace(".",",")}.`);
+            alert(`Boa viagem, você pode ficar ${dias} e preço da sua viagem será R$ ${precoViagem2.toFixed(2).replace(".",",")}.`);
         }
         else{
             const falta2 = precoViagem2 - dinheiro;
             alert(`Sem Férias, falta R$ ${falta2.toFixed(2).replace(".",",")} para realizar sua viagem.`);
         }
+    }
+    else{
+        alert(`Valor Inválido`);
     }
 
 
